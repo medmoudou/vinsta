@@ -164,6 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:hint="Username"
+            android:maxLines="1"
             app:layout_constraintBottom_toTopOf="@+id/download"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
