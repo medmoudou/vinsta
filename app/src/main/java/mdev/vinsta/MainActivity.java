@@ -21,7 +21,6 @@ import com.squareup.picasso.Transformation;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         searchBtn = (Button) findViewById(R.id.download);
         saveBtn = (Button) findViewById(R.id.savebtn);
         retryBtn = (Button) findViewById(R.id.retry);
-        usr = (TextInputEditText) findViewById(R.id.videourl);
+        usr = (TextInputEditText) findViewById(R.id.username);
         fullName = findViewById(R.id.txtname);
         bio = findViewById(R.id.txtbio);
         nbFollow = findViewById(R.id.txtfollow);
