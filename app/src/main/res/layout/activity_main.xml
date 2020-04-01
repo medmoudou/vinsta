@@ -164,13 +164,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:hint="Username"
-            android:maxLines="1"
             app:layout_constraintBottom_toTopOf="@+id/download"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
+                android:maxLines="1"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890._-"
+                android:inputType="textFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -195,5 +197,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ResultLayout"
         tools:src="@tools:sample/avatars[2]" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
+        app:adSize="BANNER"
+        app:adUnitId="@string/admob_banner_ad"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

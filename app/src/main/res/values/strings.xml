@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Vinsta</string>
+
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="admob_interstitial_ad">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_banner_ad">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>
