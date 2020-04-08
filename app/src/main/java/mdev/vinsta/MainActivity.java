@@ -121,8 +121,9 @@ public class MainActivity extends AppCompatActivity {
                     BitmapDrawable draw = (BitmapDrawable) hdPic.getDrawable();
                     Bitmap bitmap = draw.getBitmap();
                     FileOutputStream outStream = null;
-                    File sdCard = Environment.getExternalStorageDirectory();
-                    File dir = new File(sdCard.getAbsolutePath() + "/Vinsta"); // you can change Vinsta to the folder you want to save picture in
+                    File dir = new File(Environment
+                            .getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + "/Vinsta/"); // you can change Vinsta to the folder you want to save picture in
+
                     if (!dir.exists()) { // check if folder is exists or not to create one
                         dir.mkdirs();
                     }
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     sendBroadcast(intent);
                     Toast.makeText(MainActivity.this,"Photo saved successfully",Toast. LENGTH_SHORT).show();
                 }catch(IOException e){
-                    Toast.makeText(MainActivity.this,"Error !",Toast. LENGTH_SHORT).show();
+                    e.printStackTrace();
                 }
             }
         });
@@ -160,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
         if (!havePerm()) {
             reqPerm(); //request permission
         }
-
 
     }
 
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
     //-------------------------------------------------------------------------------------------------------------
 
     private boolean havePerm() {
-        int result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
+        int result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (result == PackageManager.PERMISSION_GRANTED) {
             return true;
         } else {
@@ -241,6 +241,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void reqPerm() {
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 101); //Request storage permission
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 101); //Request storage permission
     }
 }
